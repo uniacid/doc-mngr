@@ -1,0 +1,17 @@
+<h2>{{document.fileName[0]}} {{document.realFileName[0]}}</h2>
+
+<form name='editDocument' class="form-horizontal">
+	<form-field record='document' field='fileName' required='true'></form-field>
+	<form-field record='document' field='realFileName' required='true'></form-field>
+	<!-- <form-field record='document' field='created' ng-value="parseDate"></form-field> -->
+	<!-- <form-field record='document' field='modified'></form-field> -->
+	<form-field record='document' field='{{k}}' ng-repeat='(k, v) in document | keyFilter: "fileName" | keyFilter: "realFileName" | keyFilter: "created" | "keyFilter": "modified" | keyFilter: "id" | keyFilter: "userId"'></form-field>
+
+	<new-field record='document'></new-field>
+
+	<div class="row form-group">
+		<div class="col-sm-offset-2">
+			<button class="btn btn-danger" ng-click="delete()">Delete Document</button>
+		</div>
+	</div>
+</form>

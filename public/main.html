@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="UltiDocMngApp">
+    <head>
+        <title>Ulti Document Manager</title>
+        <base href="/">
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />        
+        <link rel="stylesheet" href="src/bootstrap.min.css" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Ulti Document Manager</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" ng-include='"views/nav.html"'></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" ng-view></div>
+            </div>
+        </div>
+        <script src='lib/jquery/dist/jquery.min.js'></script>
+        <script src='lib/bootstrap/dist/js/bootstrap.min.js'></script>        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+        <script src='lib/angular/angular.min.js'></script>
+        <script src='lib/angular-route/angular-route.min.js'></script>
+        <script src='lib/angular-resource/angular-resource.min.js'></script>
+        <script src='lib/angular-messages/angular-messages.min.js'></script>
+        <script src="lib/ng-file-upload/ng-file-upload-shim.js"></script>
+        <script src="lib/ng-file-upload/ng-file-upload.js"></script>
+        <script src='src/app.js'></script>
+        <script src='src/controllers.js'></script>
+        <script src='src/factories.js'></script>
+        <script src='src/filters.js'></script>
+        <script src='src/directives.js'></script>
+    </body>
+</html>

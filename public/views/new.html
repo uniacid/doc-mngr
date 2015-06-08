@@ -1,0 +1,32 @@
+<h2>New Document</h2>
+
+<form name="newDocument" novalidate class="form-horizontal">
+    <form-field record='document' field='fileName' live='false' required='true'></form-field>
+    <form-field record='document' field='realFileName' live='false' required='true'></form-field>
+
+	<div record="document" field="file" live="false" required="required" class="row form-group ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="file" ng-class="{ 'has-error': file.$dirty &amp;&amp; file.$invalid }">
+    <label class="col-sm-2 control-label ng-binding"> File <!-- ngIf: required --><span class="ng-scope" ng-if="required">*</span><!-- end ngIf: required --></label>
+    <div class="col-sm-6" ng-switch="required">
+    	<input type="file" id="file" name="file" ng-model="record[fileData][0]" />
+        <!-- <input ng-switch-when="true" ng-model="record[field][0]" class="form-control ng-pristine ng-untouched ng-scope ng-invalid ng-invalid-required" required="" ng-change="update()" ng-blur="blurUpdate()" type=""> -->
+    </div>
+
+    <div class="col-sm-4 has-error ng-hide ng-active" ng-show="file.$dirty &amp;&amp; file.$invalid" ng-messages="file.$error">
+        <!-- ngMessage: required --><p class="control-label ng-binding ng-scope" ng-message="required">File is required.</p>
+        <!-- ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types --><!-- ngMessage: {{k}} --><!-- end ngRepeat: (k, v) in types -->
+    </div>
+	</div>
+   
+    <form-field ng-repeat='(k,v) in document | keyFilter: "fileName" | keyFilter: "realFileName" | keyFilter: "created" | keyFilter: "modified" | keyFilter: "file"' record='document' field='{{k}}'></form-field>
+
+	<new-field record='document' live='false'></new-field>
+
+	<p>{{document.file}}</p>
+
+    <div class='row form-group'>
+        <div class='col-sm-offset-2'>
+            <button class='btn btn-primary' ng-click='upload()'>Upload File</button>
+            <button class='btn btn-primary' ng-click='save()'>Save Document</button>
+        </div>
+    </div>
+</form>
